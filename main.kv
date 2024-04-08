@@ -1,0 +1,208 @@
+<MainScreen>:
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+
+	##################
+	##### BUTTONS ####
+        ##################
+
+        DPEAButton:
+            id: pneumatic
+            color: 0.250, 0.744, 0.294, 1
+            text: "Change Pneumatic"
+            center_x: root.width * 0.65
+            y: root.height * 0.6
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.update_pneumatic()
+
+        DPEAButton:
+            id: pneumatic
+            color: 0.250, 0.744, 0.294, 1
+            text: "Change Pneumatic"
+            center_x: root.width * 0.5
+            y: root.height * 0.6
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.toggle_air()
+
+        DPEAButton:
+            id: lowerSand
+            color: 0.250, 0.744, 0.294, 1
+            text: "Go Sand"
+            center_x: root.width * 0.65
+            y: root.height * 0.35
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.move(3)
+
+        DPEAButton:
+            id: volume
+            color: 0.180, 0.188, 0.980, 1
+            text: "Toggle volume"
+            center_x: root.width * 0.8
+            y: root.height * 0.35
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.toggle_volume()
+
+        DPEAButton:
+            id: home
+            color: 0.5, 0.5, 0.980, 1
+            text: "Go Home"
+            center_x: root.width * 0.2
+            y: root.height * 0.35
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.move(0)
+
+        DPEAButton:
+            id: square
+            color: 0.180, 0.6, 0.187, 1
+            text: "Go Square"
+            center_x: root.width * 0.35
+            y: root.height * 0.35
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.move(1)
+
+
+        DPEAButton:
+            id: circle
+            color: 0.80, 0.324, 0.094, 1
+            text: "Go Circle"
+            center_x: root.width * 0.5
+            y: root.height * 0.35
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 200,100
+            on_press: root.move(2)
+
+        DPEAButton:
+            id: circle952
+            color: 0.180, 0.6, 0.187, 1
+            text: "Circle 952"
+            center_x: root.width * 0.2
+            y: root.height * 0.5
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 100,100
+            on_press: root.circle952()
+
+
+        DPEAButton:
+            id: square1282
+            color: 0.80, 0.324, 0.094, 1
+            text: "Square 1282"
+            center_x: root.width * 0.8
+            y: root.height * 0.5
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 100,100
+            on_press: root.square1282()
+
+        DPEAButton:
+            color: 0.80, 0.324, 0.094, 1
+            text: "Move to Real Screen"
+            center_x: root.width * 0.9
+            y: root.height * 0.9
+            background_color: 0, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 100,100
+            on_press: root.move_to_traj()
+
+
+	##################
+	##### SLIDERS ####
+        ##################
+
+        Slider:
+            id: moveLeg
+            orientation: 'horizontal'
+            min: 100
+            max: 2000
+            step: 1
+            center_x: root.width * 0.5
+            y: root.height * 0.25
+            size_hint_x: 10
+            on_value: root.update_freq_square(self.value)
+
+        Slider:
+            id: moveArm
+            orientation: 'horizontal'
+            min: 100
+            max: 2000
+            step: 1
+            center_x: root.width * 0.5
+            y: root.height * 0.05
+            size_hint_x: 10
+            on_value: root.update_freq_circle(self.value)
+
+        Slider:
+            id: updateVol
+            orientation: 'horizontal'
+            min: 20
+            max: 47
+            step: 1
+            center_x: root.width * 0.5
+            y: root.height * 0.85
+            size_hint_x: 10
+            on_value: root.update_vol(self.value)
+
+
+        ##################
+	##### LABELS #####
+        ##################
+
+        Label:
+            id: title
+            text: 'Chladni Plate'
+            font_size: 55
+            bold: True
+            center_x: root.width * 0.5
+            halign: 'center'
+            y: root.height * 0.75
+            color: 0.9, 0.9, 0.9, 1
+
+
+        Label:
+            id: frequencyCircle
+            text: 'Square Frequency: ' + str(root.frequency)
+            font_size: 40
+            center_x: root.width * 0.22
+            y: root.height * 0.05
+            color: 0.8, 0.8, 0.8, 1
+
+        Label:
+            id: frequencySquare
+            text: 'Circle Frequency: ' + str(root.frequency)
+            font_size: 40
+            center_x: root.width * 0.22
+            y: root.height * 0.25
+            color: 0.8, 0.8, 0.8, 1
+
+        Label:
+            id: vol
+            text: 'Volume: ' + str(root.frequency)
+            font_size: 40
+            center_x: root.width * 0.22
+            y: root.height * 0.85
+            color: 0.8, 0.8, 0.8, 1
+
