@@ -1,0 +1,120 @@
+<TrajScreen>:
+    name: 'traj'
+    FloatLayout:
+        size_hint: None, None
+
+    ##################
+    	##### BUTTONS ####
+            ##################
+
+    DPEAButton:
+        color: 0.180, 0.188, 0.980, 1
+        text: "Toggle volume"
+        center_x: root.width * 0.5
+        y: root.height * 0.65
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.toggle_volume()
+
+    DPEAButton:
+        color: 0.250, 0.744, 0.294, 1
+        text: "Put Sand on Square"
+        center_x: root.width * 0.5
+        y: root.height * 0.5
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.put_sand_on_square()
+
+    DPEAButton:
+        color: 0.250, 0.744, 0.294, 1
+        text: "Put Sand on Circle"
+        center_x: root.width * 0.5
+        y: root.height * 0.35
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.put_sand_on_circle()
+
+    DPEAButton:
+        color: 0.180, 0.188, 0.980, 1
+        text: "Circle1"
+        center_x: root.width * 0.2
+        y: root.height * 0.35
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.circle1()
+
+    DPEAButton:
+        color: 0.5, 0.5, 0.980, 1
+        text: "Circle2"
+        center_x: root.width * 0.2
+        y: root.height * 0.5
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.circle2()
+
+    DPEAButton:
+        color: 0.180, 0.6, 0.187, 1
+        text: "Circle3"
+        center_x: root.width * 0.2
+        y: root.height * 0.65
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.circle3()
+
+
+    DPEAButton:
+        color: 0.80, 0.324, 0.094, 1
+        text: "Square1"
+        center_x: root.width * 0.8
+        y: root.height * 0.35
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.square1()
+
+    DPEAButton:
+        color: 0.180, 0.6, 0.187, 1
+        text: "Square2"
+        center_x: root.width * 0.8
+        y: root.height * 0.5
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.square2()
+
+    DPEAButton:
+        color: 0.280, 0.324, 0.819, 1
+        text: "Square3"
+        center_x: root.width * 0.8
+        y: root.height * 0.65
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 200,100
+        on_press: root.square3()
+
+    DPEAButton:
+        id: square1282
+        color: 0.80, 0.324, 0.094, 1
+        text: "Move to Control Screen"
+        center_x: root.width * 0.2
+        y: root.height * 0.9
+        background_color: 0, 0, 0, 0
+        background_normal: ''
+        size_hint: None,None
+        size: 100,100
+        on_press: root.move_to_main()
